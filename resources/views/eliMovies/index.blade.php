@@ -2,7 +2,7 @@
 
     @section('content')
 
-    <h1 class="text-center m-2">Tabla de series y peliculas</h1>
+    <h1 class="text-center m-2">Tabla de series y peliculas de Elizabeth</h1>
     
     <table class="table table-dark table-bordered m-4">
         <thead>
@@ -27,9 +27,9 @@
                 <th>{{$movie['fav_ost']}}</th>
                 <th>{{$movie['final_note']}}</th>
 
-                <th><a href="{{ route('movies.edit', $movie['id']) }}" class="btn btn-warning ">Editar</a></th>
+                <th><a href="{{ route('eliMovies.edit', $movie['id']) }}" class="btn btn-warning ">Editar</a></th>
                 <th>
-                    <form action="{{route('movies.destroy', $movie['id'])}}" method="POST">
+                    <form action="{{route('eliMovies.destroy', $movie['id'])}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Eliminar</button>

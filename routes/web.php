@@ -1,17 +1,35 @@
 <?php
 
-use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\EliMoviesController;
+use App\Http\Controllers\EriMoviesController;
 use Illuminate\Support\Facades\Route;
 
+    //RUTAS DE ERICK//
+
  Route::get('/', function () {
-     return view('welcome');
+     return view('erick');
 });
 
-Route::get('/movies', [MoviesController::class, 'index'])->name('movies');
+//Mostrar
+Route::get('/eriMovies', [EriMoviesController::class, 'index'])->name('eriMovies'); #Vista de la tabla
+//Crear
+Route::post('/eriMovies',[EriMoviesController::class, 'save'])->name('eriMovies.save'); #Funcion guardar registro
+//Editar
+Route::get('/eriMovies/{id}/edit', [EriMoviesController::class, 'edit'])->name('eriMovies.edit');  #Vista para editar el registro
+Route::put('/eriMovies/{id}', [EriMoviesController::class, 'update'])->name('eriMovies.update');   #Funcion para actualizar el registro
+//Eliminar
+Route::delete('/eriMovies/{id}', [EriMoviesController::class, 'destroy'])->name('eriMovies.destroy');  #Funcion para eliminar el registro
 
-Route::post('/movies',[MoviesController::class, 'save'])->name('movies.save');
+    //RUTAS DE ELIZABETH//
 
-Route::get('/movies/{id}/edit', [MoviesController::class, 'edit'])->name('movies.edit');
-Route::put('movies/{id}', [MoviesController::class, 'update'])->name('movies.update');
+ Route::get('/elizabeth', function () {
+     return view('elizabeth');
+});
 
-Route::delete('/movies/{id}', [MoviesController::class, 'destroy'])->name('movies.destroy');
+Route::get('/eliMovies', [EliMoviesController::class, 'index'])->name('eliMovies');
+Route::post('/eliMovies', [EliMoviesController::class, 'save'])->name('eliMovies.save');
+
+Route::get('/eliMovies/{id}/edit', [EliMoviesController::class, 'edit'])->name('eliMovies.edit');
+Route::put('/eliMovies/{id}', [EliMoviesController::class, 'update'])->name('eliMovies.update');
+
+Route::delete('/elimovies/{id}', [EliMoviesController::class, 'destroy'])->name('eliMovies.destroy');

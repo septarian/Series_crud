@@ -3,8 +3,8 @@
 @section('content')
 
 
-    <h1 class="text-center mt-3 mb-5">Registro de Peliculas y series favoritas</h1>
-    <form action="{{route('movies.save')}}" method="POST" style="" class="row bg-gradient border border-warning d-flex-inline col-12 py-4 px-5 mx-auto mb-5 text-center gap-4">
+    <h1 class="text-center mt-3 mb-5">Registro de Peliculas y series favoritas de Elizabeth</h1>
+    <form action="{{route('eliMovies.save')}}" method="POST" style="" class="fw-bold row bg-gradient border border-warning d-flex-inline col-12 py-4 px-5 mx-auto mb-5 text-center gap-4">
         @csrf
         <div class="col my-auto">
             <label for="title" class="form-label">Titulo:</label>

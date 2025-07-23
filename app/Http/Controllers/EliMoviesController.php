@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movies;
+use App\Models\EliMovies;
 use Illuminate\Http\Request;
 
-class MoviesController extends Controller
+class EliMoviesController extends Controller
 {
     public function index(){
-
-        $movies = Movies::all();
-
-        return view('movies.index', compact('movies'));
+        $movies = EliMovies::all();
+        return view('eliMovies.index', compact('movies'));
     }
 
     public function save(Request $request){
@@ -23,7 +21,7 @@ class MoviesController extends Controller
             'final_note'    => 'required|string',
         ]);
 
-        Movies::create([
+        EliMovies::create([
             'title'         => $validated['title'],
             'description'   => $validated['description'],
             'comments'      => $validated['comments'],
@@ -31,12 +29,12 @@ class MoviesController extends Controller
             'final_note'    => $validated['final_note'],
         ]);
 
-        return redirect()->route('movies')->with('success', "{$validated['title']} Agregado Correctamente");
+        return redirect()->route('eliMovies.save')->with('success', "{$validated['title']} agregado correctamente");
     }
 
     public function edit($id){
-        $movie = Movies::findOrFail(id: $id);   #busca el elemento por su id o falla
-        return view('movies.edit', compact('movie'));   #regresa la vista
+        $movie = EliMovies::findOrFail($id);
+        return view('eliMovies.edit', compact('movie'));
     }
 
     public function update(Request $request, $id){
@@ -48,7 +46,7 @@ class MoviesController extends Controller
             'final_note'    => 'required|string',
         ]);
 
-        $movie = Movies::findOrFail(id: $id);
+        $movie = EliMovies::findOrFail(id: $id);
         $movie->update([
             'title'         => $validated['title'],
             'description'   => $validated['description'],
@@ -57,13 +55,13 @@ class MoviesController extends Controller
             'final_note'    => $validated['final_note'],
         ]);
 
-        return redirect()->route('movies')->with('success', "{$movie['title']} Actualizado Correctamente");
+        return redirect()->route('eliMovies')->with('success', "{$movie['title']} Actualizado Correctamente");
     }
 
     public function destroy($id){
-        $movie = Movies::findOrFail(id: $id);
+        $movie = EliMovies::findOrFail(id: $id);
         $movie->delete();
 
-        return redirect()->route('movies')->with('success', "{$movie['title']} Eliminado Correctamente");
+        return redirect()->route('eliMovies')->with('success', "{$movie['title']} Eliminado correctamente");
     }
 }
