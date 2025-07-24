@@ -28,7 +28,7 @@
             <div class="container">
 
                 @yield('content')
-                
+
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
     }
     .back{
         min-height: 100vh; 
-        background-image: url('imgs/estrellas.webp');
+        background-image: url(' {{ asset('imgs/estrellas.webp') }} ');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
