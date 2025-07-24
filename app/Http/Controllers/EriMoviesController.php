@@ -11,7 +11,7 @@ class EriMoviesController extends Controller
 
         $movies = Movies::all();
 
-        return view('EriMovies.index', compact('movies'));
+        return view('eriMovies.index', compact('movies'));
     }
 
     public function save(Request $request){
