@@ -5,9 +5,9 @@
 
     <h1 class="text-center mt-3 mb-5">Registro de Peliculas y series favoritas de Erick</h1>
 
-    <form action="{{route('eriMovies.save')}}" method="POST" style="" class="fw-bold row bg-gradient border border-warning d-flex-inline col-12 py-4 px-5 mx-auto mb-5 text-center gap-4">
+    <form action="{{route('eriMovies.save')}}" method="POST" style="" class="fw-bold row bg-gradient border border-warning d-flex-inline col-12 py-4 px-5 mb-5 mx-auto text-center gap-4">
         @csrf
-        <div class="col my-auto">
+        <div class="col-md my-auto">
             <label for="title" class="form-label">Titulo:</label>
             <input type="text" name="title" id="title" class="form-control mb-3" required>
 

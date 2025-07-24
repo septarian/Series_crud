@@ -11,7 +11,6 @@
 </head>
 
 <body class="text-white">
-
     <div class="back position-relative">
         <div class="overlay position-absolute w-100 h-100"></div>
 
