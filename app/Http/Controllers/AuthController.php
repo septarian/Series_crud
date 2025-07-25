@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
+        if(Auth::check()){
+            return redirect()->route('erick');
+        }
+
         return view('modules.auth.login');
     }
 
@@ -38,9 +41,16 @@ class AuthController extends Controller
         ];
 
         if(Auth::attempt($credentials)){
-            return redirect()->route('eriMovies');
+            return redirect()->route('erick');
         } else {
             return redirect()->route('login');
         }
+    }
+
+    public function logout(){
+        Session::flush();
+        Auth::logout();
+
+        return redirect()->route('login');
     }
 }

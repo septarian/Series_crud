@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class EliMoviesController extends Controller
 {
+    public function elizabeth(){
+        return view('elizabeth');
+    }
+    
     public function index(){
         $movies = EliMovies::all();
         return view('eliMovies.index', compact('movies'));

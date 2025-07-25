@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class EriMoviesController extends Controller
 {
+    
+    public function erick(){
+        return view('erick');
+    }
+
     public function index(){
 
         $movies = Movies::all();

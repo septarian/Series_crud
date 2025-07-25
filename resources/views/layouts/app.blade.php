@@ -21,6 +21,7 @@
                     <a href="/eriMovies" class="link-underline link-underline-opacity-0 text-danger-emphasis">Tabla de Erick</a>
                     <a href="/elizabeth" class="link-underline link-underline-opacity-0 text-info">Registro de Elizabeth</a>
                     <a href="/eliMovies" class="link-underline link-underline-opacity-0 text-info">Tabla de Elizabeth</a>
+                    <a href="/logout" class="btn btn-danger">Cerrar sesion</a>
                 </section>
             </div>
 
