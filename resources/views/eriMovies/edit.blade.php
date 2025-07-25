@@ -3,6 +3,7 @@
 @section('content')
 
     <h1 class="text-center mt-3 mb-5">Actualizar Pelicula o Serie</h1>
+    
     <form action=" {{route('eriMovies.update', $movie['id'])}}" method="POST" style=""
         class="row bg-gradient border border-danger d-flex-inline col-12 py-4 px-5 mx-auto mb-5 text-center gap-4">
         @csrf

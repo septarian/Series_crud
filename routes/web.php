@@ -1,12 +1,21 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EliMoviesController;
 use App\Http\Controllers\EriMoviesController;
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/', [AuthController::class, 'index'])->name('login');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/registered', [AuthController::class, 'registered'])->name('registered');
+Route::post('/access', [AuthController::class, 'access'])->name('access');
+
+
+
     //RUTAS DE ERICK//
 
- Route::get('/', function () {
+ Route::get('/erick', function () {
      return view('erick');
 });
 
